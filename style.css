@@ -1,0 +1,142 @@
+body, h1, h2, p, button {
+  color: yellow !important;
+}
+body {
+  font-family: 'Nico Moji', Arial, sans-serif;
+  text-align: center;
+  background-image: url('5E983ACD-9E12-4DCB-BB8E-3601834E3936.png');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: black;
+  color: yellow;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+@font-face {
+  font-family: 'Nico Moji';
+  src: url('NicoMoji-Regular.ttf') format('truetype');
+}
+
+
+.screen {
+  display: none;
+  padding: 20px;
+}
+
+#start-screen {
+  display: block;
+}
+
+.text-box {
+  background-color: rgba(255, 105, 180, 0.85);
+  padding: 25px 35px;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 300px auto;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.7);
+  text-align: center;
+  color: yellow;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: #ff69b4;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px hotpink;
+}
+
+#options button {
+  color: pink;
+  text-shadow: 0 0 5px hotpink, 0 0 10px deeppink;
+  margin: 10px auto;
+  width: 200px;
+  display: block;
+}
+
+#quiz-screen .text-box {
+  text-align: left;
+}
+
+#player-name {
+  padding: 10px 15px;
+  font-size: 18px;
+  font-family: 'Nico Moji', Arial, sans-serif;
+  background-color: hotpink;
+  color: yellow;
+  border: 2px solid deeppink;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 300px;
+  margin-top: 10px;
+  text-align: center;
+  outline: none;
+}
+
+#player-name::placeholder {
+  color: yellow;
+  opacity: 0.7;
+}
+
+#name-screen button {
+  padding: 10px 20px;
+  margin: 10px auto;
+  font-size: 18px;
+  font-family: 'Nico Moji', Arial, sans-serif;
+  background-color: hotpink;
+  color: yellow;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-shadow: 0 0 5px hotpink, 0 0 10px deeppink;
+  display: block;
+  width: 200px;
+  transition: transform 0.1s ease;
+}
+
+#name-screen button:hover {
+  transform: scale(1.05);
+}
+
+
+#progress-container {
+  background-color: #555;
+  border-radius: 10px;
+  height: 20px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  background-color: hotpink;
+  width: 0%;
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+#timer {
+  font-family: 'Nico Moji', Arial, sans-serif;
+  font-size: 18px;
+  color: yellow;
+  background-color: rgba(255, 105, 180, 0.85);
+  padding: 8px 15px;
+  border-radius: 12px;
+  width: fit-content;
+  margin-bottom: 15px;
+  text-align: center;
+}
+

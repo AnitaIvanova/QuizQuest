@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuizQuest</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <div id="start-screen" class="screen text-box">
+    <h1>QuizQuest</h1>
+    <button onclick="showNameScreen()">Start</button>
+  </div>
+
+  <div id="name-screen" class="screen text-box">
+    <h2>Welcome!</h2>
+    <p>Enter your name (or leave blank to continue as "Player"):</p>
+    <input type="text" id="player-name" placeholder="Your name">
+    <br>
+    <button onclick="saveName()">Continue</button>
+  </div>
+
+  <div id="instructions-screen" class="screen text-box">
+    <h2>Instructions</h2>
+    <p>
+      Choose a programming language.<br>
+      Each quiz has 5 multiple-choice questions.<br>
+      Click the answer you think is correct.<br>
+      You cannot change your answer once selected.<br>
+      At the end, your total score is shown, and you can restart if you want.
+    </p>
+    <button onclick="showLanguageSelection()">Play</button>
+  </div>
+
+  <div id="language-screen" class="screen text-box">
+    <h2>Select Language</h2>
+    <button onclick="startQuiz('Python')">Python</button>
+    <button onclick="startQuiz('JavaScript')">JavaScript</button>
+    <button onclick="startQuiz('Swift')">Swift</button>
+    <button onclick="startQuiz('C')">C</button>
+  </div>
+
+  
+  <div id="quiz-screen" class="screen">
+    <div class="text-box">
+    
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+
+      
+      <p id="timer" style="font-size: 18px; margin-bottom: 15px;">Time: 10s</p>
+
+      
+      <h2 id="question-number"></h2>
+      <p id="question-text"></p>
+
+      
+      <div id="options"></div>
+    </div>
+  </div>
+
+  <div id="result-screen" class="screen text-box">
+    <h2>Your Score</h2>
+    <p id="score-text"></p>
+    <button onclick="restartGame()">Restart</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
