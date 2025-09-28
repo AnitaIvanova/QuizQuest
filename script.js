@@ -38,9 +38,6 @@ const questions = {
   ]
 };
 
-// -----------------------------
-// Screen Functions
-// -----------------------------
 function showScreen(id) {
   document.querySelectorAll(".screen").forEach(div => div.style.display = "none");
   document.getElementById(id).style.display = "block";
@@ -50,18 +47,12 @@ function showInstructions() { showScreen("instructions-screen"); }
 function showLanguageSelection() { showScreen("language-screen"); }
 function showNameScreen() { showScreen("name-screen"); }
 
-// -----------------------------
-// Name Functions
-// -----------------------------
 function saveName() {
   const input = document.getElementById("player-name").value.trim();
   if (input !== "") playerName = input;
   showInstructions();
 }
 
-// -----------------------------
-// Quiz Functions
-// -----------------------------
 function startQuiz(language) {
   selectedLanguage = language;
   currentQuestion = 0;
@@ -89,7 +80,6 @@ function showQuestion() {
   const optionsDiv = document.getElementById("options");
   optionsDiv.innerHTML = '';
 
-  // Shuffle options and mark correct answer
   const shuffledOptions = q.a.map((text, index) => ({ text, originalIndex: index }));
   shuffledOptions.sort(() => Math.random() - 0.5);
 
@@ -116,9 +106,6 @@ function updateTimerDisplay() {
   timerDiv.innerText = `Time: ${timeLeft}s`;
 }
 
-// -----------------------------
-// Check Answer
-// -----------------------------
 function checkAnswer(btn) {
   clearInterval(timerInterval);
   const optionsButtons = Array.from(document.getElementById("options").children);
@@ -140,9 +127,6 @@ function checkAnswer(btn) {
   }, 600);
 }
 
-// -----------------------------
-// Auto next question if time runs out
-// -----------------------------
 function autoNextQuestion() {
   const optionsButtons = Array.from(document.getElementById("options").children);
   const correctBtn = optionsButtons.find(b => b.dataset.correct === "true");
@@ -156,17 +140,11 @@ function autoNextQuestion() {
   }, 600);
 }
 
-// -----------------------------
-// Progress Bar
-// -----------------------------
 function updateProgressBar() {
   const percent = (currentQuestion / shuffledQuestions.length) * 100;
   document.getElementById("progress-bar").style.width = percent + "%";
 }
 
-// -----------------------------
-// Results
-// -----------------------------
 function showResult() {
   showScreen("result-screen");
   const total = shuffledQuestions.length;
@@ -190,9 +168,6 @@ function showResult() {
   }
 }
 
-// -----------------------------
-// Restart
-// -----------------------------
 function restartGame() {
   selectedLanguage = '';
   currentQuestion = 0;
